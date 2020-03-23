@@ -1,4 +1,4 @@
-package com.telstra
+package com.telstra.models
 
 data class Base(
     val title: String,

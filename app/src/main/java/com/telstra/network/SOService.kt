@@ -1,6 +1,6 @@
 package com.telstra.network
 
-import com.telstra.Base
+import com.telstra.models.Base
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import io.reactivex.Observable
