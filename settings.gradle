@@ -1,0 +1,2 @@
+rootProject.name='LandingScreenActivity'
+include ':app'
