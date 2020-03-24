@@ -21,6 +21,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        //If we want we can create the deferent environments here like (UAT,QA,DEV)
     }
 
 }
@@ -35,7 +36,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-
+    //---------------------Open-Source Libraries-----------------------
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -43,14 +44,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-scalars:2.2.0'
     //RxJava
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
-    //recyclarview
+    //Recyclarview
     implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
-    //card view
+    //Card view
     implementation 'androidx.cardview:cardview:1.0.0-beta01'
-    //picasso
+    //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
-
+    //Swipere To fresh
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Telstra</string>
+    <string name="no_title"><![CDATA[<No title>]]></string>
+    <string name="no_dscp"><![CDATA[<No description>]]></string>
 </resources>

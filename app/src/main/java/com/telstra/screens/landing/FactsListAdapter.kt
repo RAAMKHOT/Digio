@@ -1,20 +1,18 @@
-package com.telstra
+package com.telstra.screens.landing
 
-import android.graphics.Color
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
 import com.squareup.picasso.Picasso
+import com.telstra.R
 import com.telstra.models.Rows
 
-
-class ItemListAdapter(private var cropList: ArrayList<Rows>) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<ItemListAdapter.CropViewHolder>() {
+class FactsListAdapter(private var cropList: ArrayList<Rows>, private var context: Context) :
+    androidx.recyclerview.widget.RecyclerView.Adapter<FactsListAdapter.CropViewHolder>() {
     private var tempList: ArrayList<Rows>? = null
-    private var cropSelectedCount = 0
 
     inner class CropViewHolder(view: View) :
         androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
@@ -34,17 +32,17 @@ class ItemListAdapter(private var cropList: ArrayList<Rows>) :
         val cropItem = cropList[position]
         if (cropItem.title != null) {
             holder.textViewTitle.text = cropItem.title
-            holder.textViewTitle.setTextColor(Color.parseColor("#1f3774"))
+            holder.textViewTitle.setTextColor(context.getColor(R.color.titleColor))
         } else {
-            holder.textViewTitle.text = "<No title>"
-            holder.textViewTitle.setTextColor(Color.parseColor("#c3c3c3"))
+            holder.textViewTitle.text = context.getString(R.string.no_title)
+            holder.textViewTitle.setTextColor(context.getColor(R.color.titleHintColor))
         }
         if (cropItem.description != null) {
             holder.textViewDescription.text = cropItem.description
-            holder.textViewDescription.setTextColor(Color.parseColor("#000000"))
+            holder.textViewDescription.setTextColor(context.getColor(R.color.descriptionColor))
         } else {
-            holder.textViewDescription.text = "<No description>"
-            holder.textViewDescription.setTextColor(Color.parseColor("#c3c3c3"))
+            holder.textViewDescription.text = context.getString(R.string.no_dscp)
+            holder.textViewDescription.setTextColor(context.getColor(R.color.titleHintColor))
         }
 
         Picasso.get()
