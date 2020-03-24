@@ -6,7 +6,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.net.ssl.SSLHandshakeException
 
-class LandingPresenter(private val view: LandingView, private val context: LandingActivity) {
+class LandingPresenter(private val view: LandingView) {
     private val repository = CommonUtils.getSOService()
     fun getFactData() {
         CompositeDisposable().add(

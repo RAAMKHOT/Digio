@@ -23,7 +23,7 @@ class LandingActivity : AppCompatActivity(), LandingView {
     override fun init() {
         shimmerContainer = shimmer_view_container as ShimmerFrameLayout
         shimmerContainer.startShimmerAnimation()
-        landingPresenter = LandingPresenter(this, this)
+        landingPresenter = LandingPresenter(this)
         factListAdapter = FactsListAdapter(ArrayList<Rows>(), this)
         val mLayoutManager = androidx.recyclerview.widget.LinearLayoutManager(applicationContext)
         factsRecyclerView.layoutManager = mLayoutManager
