@@ -1,6 +1,6 @@
-package com.telstra.screens.landing
+package com.ramagouda.screens.landing
 
-import com.telstra.models.Base
+import com.ramagouda.models.Base
 
 interface LandingView {
     fun init()

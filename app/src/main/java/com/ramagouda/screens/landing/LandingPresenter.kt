@@ -1,6 +1,6 @@
-package com.telstra.screens.landing
+package com.ramagouda.screens.landing
 
-import com.telstra.helper.CommonUtils
+import com.ramagouda.helper.CommonUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

@@ -1,4 +1,4 @@
-package com.telstra
+package com.ramagouda
 
 import org.junit.Test
 

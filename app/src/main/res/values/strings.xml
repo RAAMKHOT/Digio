@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Telstra</string>
+    <string name="app_name">RaamKhot</string>
     <string name="no_title"><![CDATA[<No title>]]></string>
     <string name="no_dscp"><![CDATA[<No description>]]></string>
+    <string name="no_pdf_files_label">No PDF files are found in local</string>
 </resources>

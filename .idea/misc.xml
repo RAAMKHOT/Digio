@@ -5,7 +5,18 @@
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../.gradle/caches/transforms-2/files-2.1/db72437fffedc6d6e9a32ec555665f9e/jetified-appcompat-resources-1.1.0/res/drawable/abc_vector_test.xml" value="0.1385" />
+        <entry key="app/src/main/res/layout/activity_landing.xml" value="0.3453125" />
+        <entry key="app/src/main/res/layout/activity_pdf_list.xml" value="0.34" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3453125" />
+        <entry key="app/src/main/res/layout/facts_item_row.xml" value="0.34" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

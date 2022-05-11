@@ -1,4 +1,4 @@
-package com.telstra.screens.landing
+package com.ramagouda.screens.activities
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,16 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import com.ramagouda.R
+import com.ramagouda.helper.CommonUtils
 import com.squareup.picasso.Picasso
-import com.telstra.R
-import com.telstra.models.Rows
+import java.io.File
 
-class FactsListAdapter(private var cropList: ArrayList<Rows>, private var context: Context) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<FactsListAdapter.CropViewHolder>() {
-    private var tempList: ArrayList<Rows>? = null
+class PdfListAdapter(
+    private var cropList: ArrayList<String>,
+    private var context: Context,
+    private var pdfListView: PdfListView
+) :
+    RecyclerView.Adapter<PdfListAdapter.CropViewHolder>() {
+    private var tempList: ArrayList<String>? = null
 
-    inner class CropViewHolder(view: View) :
-        androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
+    inner class CropViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textViewTitle: TextView = view.findViewById(R.id.textViewTitle)
         var textViewDescription: TextView = view.findViewById(R.id.textViewDescription)
         var imageViewFact: ImageView = view.findViewById(R.id.imageViewFact)
@@ -24,30 +30,39 @@ class FactsListAdapter(private var cropList: ArrayList<Rows>, private var contex
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CropViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.facts_item_row, parent, false)
-
         return CropViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: CropViewHolder, position: Int) {
         val cropItem = cropList[position]
-        if (cropItem.title != null) {
-            holder.textViewTitle.text = cropItem.title
+        if (cropItem != null) {
+            val file = File(cropItem)
+            holder.textViewTitle.text = file.name
             holder.textViewTitle.setTextColor(context.getColor(R.color.titleColor))
         } else {
             holder.textViewTitle.text = context.getString(R.string.no_title)
             holder.textViewTitle.setTextColor(context.getColor(R.color.titleHintColor))
         }
-        if (cropItem.description != null) {
-            holder.textViewDescription.text = cropItem.description
+        if (cropItem != null) {
+            holder.textViewDescription.text = "Path : \n$cropItem"
             holder.textViewDescription.setTextColor(context.getColor(R.color.descriptionColor))
         } else {
             holder.textViewDescription.text = context.getString(R.string.no_dscp)
             holder.textViewDescription.setTextColor(context.getColor(R.color.titleHintColor))
         }
 
+        holder.itemView.setOnClickListener {
+            val file = File(cropItem)
+            pdfListView.sendFileToServer(file)
+            CommonUtils.showToast(context,"Upload Started!!")
+            Picasso.get()
+                .load(R.drawable.pdf_upload)
+                .placeholder(R.drawable.pdf_upload)
+                .into(holder.imageViewFact)
+        }
         Picasso.get()
-            .load(cropItem.imageHref)
-            .placeholder(R.drawable.placeholder)
+            .load(R.drawable.pdf_down)
+            .placeholder(R.drawable.pdf_down)
             .into(holder.imageViewFact)
     }
 
@@ -55,7 +70,7 @@ class FactsListAdapter(private var cropList: ArrayList<Rows>, private var contex
         return cropList.size
     }
 
-    fun setList(listOfFarmers: ArrayList<Rows>) {
+    fun setList(listOfFarmers: ArrayList<String>) {
         tempList = ArrayList()
         cropList.addAll(listOfFarmers)
         tempList!!.addAll(listOfFarmers)

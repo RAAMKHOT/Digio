@@ -1,4 +1,4 @@
-package com.telstra.models
+package com.ramagouda.models
 
 data class Base(
     val title: String,

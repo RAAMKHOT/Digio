@@ -1,12 +1,12 @@
-package com.telstra.screens.landing
+package com.ramagouda.screens.landing
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.telstra.R
-import com.telstra.helper.CommonUtils
-import com.telstra.models.Base
-import com.telstra.models.Rows
+import com.ramagouda.R
+import com.ramagouda.helper.CommonUtils
+import com.ramagouda.models.Base
+import com.ramagouda.models.Rows
 import kotlinx.android.synthetic.main.activity_landing.*
 
 class LandingActivity : AppCompatActivity(), LandingView {
